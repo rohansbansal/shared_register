@@ -1,2 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libmyproto.a CMakeFiles/myproto.dir/hello.pb.cc.o CMakeFiles/myproto.dir/hello.grpc.pb.cc.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libmyproto.a
