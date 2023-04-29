@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rohanbansal/Developer/shared_register/build/CMakeFiles /Users/rohanbansal/Developer/shared_register/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /Users/rohanbansal/Developer/shared_register/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/rohanbansal/Developer/shared_register/build/CMakeFiles /Users/rohanbansal/Developer/shared_register/build/src/client//CMakeFiles/progress.marks
+	cd /Users/rohanbansal/Developer/shared_register/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rohanbansal/Developer/shared_register/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /Users/rohanbansal/Developer/shared_register/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,57 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/rohanbansal/Developer/shared_register/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/rohanbansal/Developer/shared_register/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/rohanbansal/Developer/shared_register/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named client
+# Convenience name for target.
+src/client/CMakeFiles/client.dir/rule:
+	cd /Users/rohanbansal/Developer/shared_register/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client.dir/rule
+.PHONY : src/client/CMakeFiles/client.dir/rule
 
-# Build rule for target.
-client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client
+# Convenience name for target.
+client: src/client/CMakeFiles/client.dir/rule
 .PHONY : client
 
 # fast build rule for target.
 client/fast:
-	$(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
+	cd /Users/rohanbansal/Developer/shared_register/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
 .PHONY : client/fast
 
-#=============================================================================
-# Target rules for targets named server
+main.o: main.cc.o
+.PHONY : main.o
 
-# Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
-.PHONY : server
+# target to build an object file
+main.cc.o:
+	cd /Users/rohanbansal/Developer/shared_register/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/main.cc.o
+.PHONY : main.cc.o
 
-# fast build rule for target.
-server/fast:
-	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/server.dir/build.make src/server/CMakeFiles/server.dir/build
-.PHONY : server/fast
+main.i: main.cc.i
+.PHONY : main.i
 
-#=============================================================================
-# Target rules for targets named myproto
+# target to preprocess a source file
+main.cc.i:
+	cd /Users/rohanbansal/Developer/shared_register/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/main.cc.i
+.PHONY : main.cc.i
 
-# Build rule for target.
-myproto: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myproto
-.PHONY : myproto
+main.s: main.cc.s
+.PHONY : main.s
 
-# fast build rule for target.
-myproto/fast:
-	$(MAKE) $(MAKESILENT) -f src/proto/CMakeFiles/myproto.dir/build.make src/proto/CMakeFiles/myproto.dir/build
-.PHONY : myproto/fast
+# target to generate assembly for a file
+main.cc.s:
+	cd /Users/rohanbansal/Developer/shared_register/build && $(MAKE) $(MAKESILENT) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/main.cc.s
+.PHONY : main.cc.s
 
 # Help Target
 help:
@@ -164,8 +163,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... client"
-	@echo "... myproto"
-	@echo "... server"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/rohanbansal/Developer/shared_register/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

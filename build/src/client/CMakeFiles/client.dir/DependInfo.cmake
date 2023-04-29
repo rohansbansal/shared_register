@@ -8,11 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/rohanbansal/Developer/shared_register/src/client/main.cc" "CMakeFiles/client.dir/src/client/main.cc.o" "gcc" "CMakeFiles/client.dir/src/client/main.cc.o.d"
+  "/Users/rohanbansal/Developer/shared_register/src/client/main.cc" "src/client/CMakeFiles/client.dir/main.cc.o" "gcc" "src/client/CMakeFiles/client.dir/main.cc.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/Users/rohanbansal/Developer/shared_register/build/src/proto/CMakeFiles/myproto.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
