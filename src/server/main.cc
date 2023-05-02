@@ -2,6 +2,7 @@
 #include <grpcpp/server_builder.h>
 
 #include <hello.grpc.pb.h>
+#include "lib/store.h"
 
 #include <iostream>
 
@@ -18,14 +19,9 @@ class HelloService final : public hello::Hello::Service {
 };
 
 int main(int argc, char const* argv[]) {
-  grpc::ServerBuilder builder;
-  builder.AddListeningPort("0.0.0.0:50051", grpc::InsecureServerCredentials());
+  store::Store store;
 
-  HelloService my_service;
-  builder.RegisterService(&my_service);
-
-  std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
-  server->Wait();
+  store.Read("Hello World");
   
   return 0;
 }
