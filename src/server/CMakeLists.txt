@@ -8,10 +8,11 @@ find_package(Threads)
 #
 set(SOURCES
     main.cc
-    lib/store.cc
-    lib/store.h
     lib/node.cc
     lib/node.h
+    lib/request_handler.cc
+    lib/store.cc
+    lib/store.h
 )
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCES})

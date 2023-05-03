@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package requests;
+
+
+message ReadRequest {
+  string addr = 1;
+}
+
+message ReadResponse {
+  string val = 1;
+  int32 version = 2;
+}
+
+message PrepareWriteRequest {
+  string addr = 1;
+  string val = 2;
+}
+
+message PrepareWriteResponse {
+  bool success = 1;
+}
+
+message CommitWriteRequest {
+  string addr = 1;
+}
+
+message CommitWriteResponse {
+  bool success = 1;
+}
+
+
+service Requests {
+  rpc Read(ReadRequest) returns (ReadResponse) {}
+  rpc PrepareWrite(PrepareWriteRequest) returns (PrepareWriteResponse) {}
+  rpc CommitWrite(CommitWriteRequest) returns (CommitWriteResponse) {}
+}

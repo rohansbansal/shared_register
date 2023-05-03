@@ -1,25 +1,13 @@
-#include <grpc/grpc.h>
-#include <grpcpp/server_builder.h>
-
-#include <hello.grpc.pb.h>
+#include "lib/node.h"
 #include "lib/store.h"
 
 #include <iostream>
 
-class HelloService final : public hello::Hello::Service {
- public:
-  virtual ::grpc::Status SayHello(::grpc::ServerContext* context, const ::hello::HelloRequest* request, ::hello::HelloResponse* response)
-  {
-      std::cout << "Server: GetAddress for \"" << request->name() << "\"." << std::endl;
-
-      response->set_response("Hello World");
-      
-      return grpc::Status::OK;
-  }
-};
 
 int main(int argc, char const* argv[]) {
   store::Store store;
+  node::Node node(0, 0, 50051);
+  node.StartReplica();
 
   store.Read("Hello World");
   

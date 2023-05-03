@@ -13,6 +13,7 @@ struct Value {
 struct ValueMetadata {
   std::unique_ptr<Value> val;
   std::string prepare_val;
+  std::shared_mutex lock;
 };
 
 class Store {
@@ -23,11 +24,10 @@ class Store {
 
   void Write(std::string address, std::string value);
 
-  void Remove(std::string address)
+  void Remove(std::string address);
 
  private:
   std::unordered_map<std::string, ValueMetadata> store_;
-  std::unordered_map<std::string, std::shared_mutex> locks_;
 };
 
 }  // namespace store

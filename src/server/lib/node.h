@@ -1,3 +1,4 @@
+#include <cinttypes>
 
 namespace node {
 class Node {
